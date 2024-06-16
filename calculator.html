@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Points Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2c54;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            background: #f7f7f7;
+            color: #2c2c54;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .comics-list {
+            margin: 20px 0;
+        }
+        .comics-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .comics-list li {
+            display: flex;
+            justify-content: space-between;
+            background: #444;
+            color: white;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        .comics-list button {
+            background: red;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .total-points {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comic Points Calculator</h1>
+        <form id="calculatorForm">
+            <div class="form-group">
+                <label for="series">Comic Series</label>
+                <select id="series" name="series">
+                    <option value="Titans: Beast World">Titans: Beast World</option>
+                    <option value="Crisis on Infinite Earths">Crisis on Infinite Earths</option>
+                    <option value="Justice League vs. Suicide Squad">Justice League vs. Suicide Squad</option>
+                    <option value="Justice League of America">Justice League of America</option>
+                    <option value="Aquaman">Aquaman</option>
+                    <option value="Dawn of DC 2">Dawn of DC 2</option>
+                    <option value="Series Villains">Series Villains</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mintNumber">Mint Number</label>
+                <input type="number" id="mintNumber" name="mintNumber">
+            </div>
+            <div class="form-group">
+                <label for="rarity">Rarity</label>
+                <select id="rarity" name="rarity">
+                    <option value="Legendary">Legendary</option>
+                    <option value="Epic">Epic</option>
+                    <option value="Rare">Rare</option>
+                    <option value="Uncommon">Uncommon</option>
+                    <option value="Core">Core</option>
+                    <option value="Common">Common</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="firstMint">First Mint</label>
+                <select id="firstMint" name="firstMint">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lastMint">Last Mint</label>
+                <select id="lastMint" name="lastMint">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <button type="button" onclick="addComic()">Add</button>
+        </form>
+        <div class="comics-list">
+            <ul id="comicsList"></ul>
+        </div>
+        <div class="total-points" id="totalPoints">Total Points: 0</div>
+    </div>
+    <script>
+        const data = {
+            'Titans: Beast World': { 'base': 50, 'Legendary': 30, 'Epic': 25, 'Rare': 20, 'Uncommon': 15, 'Core': 10, 'Common': 0 },
+            'Crisis on Infinite Earths': { 'base': 45, 'Legendary': 30, 'Epic': 25, 'Rare': 20, 'Uncommon': 15, 'Core': 10, 'Common': 0 },
+            'Justice League vs. Suicide Squad': { 'base': 40, 'Legendary': 30, 'Epic': 25, 'Rare': 20, 'Uncommon': 15, '

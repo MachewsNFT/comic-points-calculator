@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Handle Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2c54;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #f7f7f7;
+            color: #2c2c54;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Discord Handle Submission</h1>
+        <form id="discordForm">
+            <div class="form-group">
+                <label for="discordHandle">Discord Handle</label>
+                <input type="text" id="discordHandle" name="discordHandle" required>
+            </div>
+            <div class="form-group">
+                <label for="showcaseLink">Showcase Link</label>
+                <input type="url" id="showcaseLink" name="showcaseLink" required>
+            </div>
+            <button type="button" onclick="submitForm()">Send</button>
+        </form>
+    </div>
+    <script>
+        function submitForm() {
+            const discordHandle = document.getElementById('discordHandle').value;
+            const showcaseLink = document.getElementById('showcaseLink').value;
+
+            // Using EmailJS to send email
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                discord_handle: discordHandle,
+                showcase_link: showcaseLink
+            }).then(response => {
+                alert('Email sent successfully!');
+            }).catch(error => {
+                alert('Failed to send email: ' + error);
+            });
+        }
+
+        // Initialize EmailJS (Replace 'YOUR_USER_ID' with your actual EmailJS user ID)
+        emailjs.init('YOUR_USER_ID');
+    </script>
+    <!-- Include EmailJS library -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</body>
+</html>
