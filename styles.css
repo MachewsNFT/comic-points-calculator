@@ -1,0 +1,355 @@
+@font-face {
+    font-family: 'Justice League';
+    src: url('path/to/justice-league-font.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Justice League', sans-serif;
+    background: linear-gradient(
+        to bottom,
+        #F9EB00 25%,
+        #C5D600 25%,
+        #007AFF 25%,
+        #FF0064 25%
+    );
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    font-size: 1.5em; /* Reduced font size proportionally */
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 14px; /* Reduced padding */
+    border-radius: 8px;
+    text-align: center;
+    width: 70%; /* Adjusted width */
+    max-width: 960px;
+    position: relative;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+header h1 {
+    font-size: 2em; /* Adjusted font size */
+    margin: 0; /* Remove margin */
+}
+
+header h2 {
+    font-size: 1.5em; /* Adjusted font size */
+    margin: 0; /* Remove margin */
+}
+
+#countdown-timer {
+    font-size: 1.2em; /* Adjusted font size */
+    color: #FFD700;
+    margin: 0; /* Removed margin */
+}
+
+.main-banner {
+    width: 100%; /* Increased banner size to fit the container width */
+    border-radius: 8px;
+    margin-bottom: 10px; /* Reduced margin */
+    border: 2px solid gold; /* Added gold border */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0; /* Reduced margin */
+}
+
+label {
+    margin: 5px 0; /* Reduced margin */
+}
+
+input, select, button {
+    width: 100%;
+    padding: 5px; /* Reduced padding */
+    margin-bottom: 5px; /* Reduced margin */
+    font-size: 1em;
+    border-radius: 4px;
+}
+
+input[type="text"],
+input[type="url"] {
+    width: 60%; /* Reduced width by 40% */
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+}
+
+.form-group.inline {
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-group.inline label,
+.form-group.inline input,
+.form-group.inline select {
+    width: auto;
+    margin-right: 10px;
+    flex: 1;
+}
+
+.form-group.inline label:last-child,
+.form-group.inline input:last-child,
+.form-group.inline select:last-child {
+    margin-right: 0;
+}
+
+.form-group label {
+    width: 100%;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group select,
+.form-group input[type="number"] {
+    width: 100%;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.large-button {
+    width: 50%; /* Reduced width by 50% */
+    padding: 10px 20px;
+    margin-top: 10px; /* Adjusted margin */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logos-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    flex: 1;
+    padding: 5px; /* Reduced padding */
+    text-align: center;
+}
+
+.logo-container img {
+    width: 70%; /* Adjusted size */
+    max-width: 150px; /* Adjusted max-width */
+    border-radius: 8px;
+    border: 2px solid gold;
+}
+
+.wiki-logo {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    background-color: #000;
+    padding: 10px; /* Reduced padding */
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #007AFF;
+    color: white;
+    width: 48%; /* Adjusted width */
+    margin-bottom: 10px;
+}
+
+.sidebar-left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -55%;
+}
+
+.sidebar-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#current-showcase-title, #leaderboard h3 {
+    font-size: 1.2em; /* Adjusted font size */
+}
+
+#showcase-info, #leaderboard-info {
+    font-size: 1em; /* Adjusted font size */
+}
+
+#showcase-info p {
+    margin: 5px 0; /* Adjusted margin */
+}
+
+#submitButton {
+    margin-top: 10px; /* Adjusted margin */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clear-button {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.showcase-logo {
+    margin-top: 10px;
+    width: 80%;
+    max-width: 150px;
+    border-radius: 8px;
+    border: 2px solid gold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leaderboard-logo {
+    width: 100%;
+    max-width: 150px;
+    margin: 10px auto; /* Adjusted margin */
+}
+
+#leaderboard-list li a {
+    color: gold;
+    text-decoration: none;
+    font-size: 1em; /* Adjusted font size */
+}
+
+#leaderboard-info p {
+    margin-bottom: 1px;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.raffle-ticket {
+    background-color: #2525A5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+}
+
+.raffle-ticket h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.raffle-ticket p {
+    margin: 10px 0;
+}
+
+.raffle-discord, .raffle-points {
+    font-family: 'Sancreek', sans-serif;
+    font-size: 21pt;
+}
+
+.raffle-date {
+    font-family: 'Antonio', sans-serif;
+    font-size: 13pt;
+}
+
+.raffle-ticket button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.raffle-ticket button:hover {
+    background-color: #45a049;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sidebar-left, .sidebar-right {
+        position: static;
+        transform: none;
+    }
+
+    .form-group.inline {
+        flex-direction: column;
+    }
+
+    .form-group.inline label,
+    .form-group.inline input,
+    .form-group.inline select {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .form-group label,
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    footer {
+        position: relative;
+        bottom: 0;
+        margin-top: 10px; /* Adjusted margin */
+    }
+}
